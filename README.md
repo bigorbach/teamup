@@ -21,4 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
+![Build Status](https://codeship.com/projects9c9fcfc0-10ce-0135-2078-6a58c802fcf8/status?branch=master)
+![Code Climate](https://codeclimate.com/github/bigorbach/teamup.png)
+![Coverage Status](https://coveralls.io/repos/bigorbach/teamup/badge.png)
 * ...
