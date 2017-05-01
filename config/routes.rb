@@ -7,6 +7,7 @@ devise_scope :user do
      resources :categories, only: [:index]
    end
 
+
   unauthenticated do
      root 'devise/sessions#new', as: :unauthenticated_root
    end
