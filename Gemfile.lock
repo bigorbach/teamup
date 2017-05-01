@@ -225,10 +225,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coveralls
-<<<<<<< HEAD
-=======
   devise
->>>>>>> d8425ba09cc20451cd52c5c570d4e3d6c862ddcf
   factory_girl
   foundation-rails
   jquery-rails
