@@ -32,8 +32,8 @@ class UserSetsController < ApplicationController
 
   def show
     @user_set = UserSet.find(params[:id])
-    @team = Team.new
-    @teams = @user_set.teams
+    # @team = Team.new
+    # @teams = @user_set.teams
 
   end
 

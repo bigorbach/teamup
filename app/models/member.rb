@@ -1,4 +1,4 @@
-class Member <ApplicationRecord
+class Member < ApplicationRecord
   validates :skill_strength, numericality: true
 
   belongs_to :team
