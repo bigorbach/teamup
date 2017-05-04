@@ -1,0 +1,12 @@
+<div class="row">
+  <h3><%= link_to 'Create New Teams', new_set_path %></h3>
+</div>
+
+<div class="row text-center">
+  <h2>Sets of Teams</h2>
+</div>
+
+<div class "row text-center">
+  <% @sets.each do |set| %>
+  <%=  link_to set.topic @set set_path%>
+</div>
