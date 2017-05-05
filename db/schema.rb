@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170504173745) do
     t.string   "topic",                      null: false
     t.integer  "team_size",                  null: false
     t.boolean  "balance",    default: false
-    t.string   "skill",      default: "f"
+    t.string   "skill",                      null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

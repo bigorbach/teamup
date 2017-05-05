@@ -11,6 +11,8 @@ class UserSetsController < ApplicationController
       redirect_to user_sets_path
     end
     @user_set = UserSet.new
+    @balance = UserSet::BALANCE
+
   end
 
   def create
@@ -19,7 +21,6 @@ class UserSetsController < ApplicationController
       redirect_to user_sets_path
     else
       @user_set = UserSet.new(user_set_params)
-      @user_set.contributor = current_user
       if @user_set.save
         flash[:success] = 'User Set added successfully'
         redirect_to user_set_path(@user_set)

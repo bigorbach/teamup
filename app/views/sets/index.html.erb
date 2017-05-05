@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="small-6 large-centered columns">
+      <h4><%= link_to 'Create New Teams', new_user_set_path %></h4>
+    </div>
+</div>
+<div class="row">
+  <h1>Sets of Teams</h1>
+</div>
+
+<% @user_sets.each do |user_set| %>
+  <div class="row">
+    <div class="small-6 large-centered columns">
+      <h3><%=  link_to user_set.topic @user_set user_set_path%></h3>
+    </div>
+  </div>
+<% end %>
