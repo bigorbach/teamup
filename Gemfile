@@ -1,5 +1,4 @@
 source 'https://rubygems.org/'
-gem 'foundation-rails'
 
 gem 'rails', '~> 5.0.0'
 gem 'pg', '~> 0.18'
@@ -7,6 +6,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'foundation-rails'
 gem 'devise'
 
 group :development do
@@ -16,13 +16,13 @@ group :development do
 end
 
 group :development, :test do
-  gem 'pry-rails'
-  gem 'rspec-rails'
   gem 'capybara'
-  gem 'launchy'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'launchy', require: false
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'valid_attribute'
-  gem 'shoulda-matchers', require: false
   gem 'coveralls', require: false
 end
 

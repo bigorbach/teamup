@@ -2,13 +2,13 @@
   <h1><%= @user_set.topic %></h1>
 </div>
 <div class="row text-center">
-  <h3><%= @user_set.skill %></h3>
+  <h4>Skill: <%= @user_set.skill %></h4>
 </div>
 <div class="row text-center">
-  <h3><%= @user_set.team_size %></h3>
+  <h5> Team Size: <%= @user_set.team_size %></h5>
 </div>
 
-<div class="row">
-  <h5><%= link_to 'Update a Set', edit_user_set_path  %></h5>
+<div class="small-6 large-centered columns">
+  <h5><%= link_to 'Update this Set', edit_user_set_path  %></h5>
   <h5><%= link_to 'Delete Set', @user_set, method: :delete, data: {confirm: "Are you sure?"} %></h5>
 </div>

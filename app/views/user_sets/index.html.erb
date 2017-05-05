@@ -1,16 +1,18 @@
 <div class="row text-center">
   <h1>TeamUP</h1>
 </div>
-<div class="row">
-  <h3><%= link_to 'Create New Teams', new_user_set_path %></h3>
+<div class="row text-center">
+  <h4><%= link_to 'Create New Teams', new_user_set_path %></h4>
 </div>
 
 <div class="row text-center">
-  <h2>Sets of Teams</h2>
+  <h3>Sets of Teams</h3>
 </div>
 
-<div class "row text-center">
-  <% @user_sets.each do |user_set| %>
-  <%=  link_to user_set.topic, user_set_path(user_set.id) %>
-  <% end %>
-</div>
+<% @user_sets.each do |user_set| %>
+  <div class="row">
+    <div class="row text-center">
+      <h4><%=  link_to user_set.topic, user_set_path(user_set.id) %></h4>
+    </div>
+  </div>
+<% end %>

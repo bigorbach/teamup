@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Teamup</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Teams" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <div id="app">
+
+    </div>
+    <% flash.each do |type, message| %>
+      <div class="<%= "flash #{type}" %>">
+         <%= message %>
+      </div>
+    <% end %>
+
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text"><%= link_to "Home", user_sets_path %></li>
+
+
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <% if signed_in? %>
+            <li><%= current_user.email %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, data: { method: 'delete' } %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "Join", new_user_registration_path %></li>
+          <% end %>
+          <li><input type="search" placeholder="Search"></li>
+          <li><button type="button" class="button">Search</button></li>
+        </ul>
+      </div>
+    </div>
+
     <%= yield %>
+
   </body>
 </html>
