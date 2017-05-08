@@ -7,6 +7,9 @@
 <div class="row text-center">
   <h5> Team Size: <%= @user_set.team_size %></h5>
 </div>
+<div class="row text-center">
+  <h5><%= link_to 'Join this Set', new_user_set_member_path(@user_set)  %></h5>
+</div>
 
 <div class="small-6 large-centered columns">
   <h5><%= link_to 'Update this Set', edit_user_set_path  %></h5>

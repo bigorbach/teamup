@@ -18,13 +18,11 @@ ActiveRecord::Schema.define(version: 20170504173745) do
   create_table "members", force: :cascade do |t|
     t.string   "skill_strength"
     t.integer  "user_id"
-    t.integer  "set_id"
-    t.integer  "team_id"
+    t.integer  "user_set_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["set_id"], name: "index_members_on_set_id", using: :btree
-    t.index ["team_id"], name: "index_members_on_team_id", using: :btree
     t.index ["user_id"], name: "index_members_on_user_id", using: :btree
+    t.index ["user_set_id"], name: "index_members_on_user_set_id", using: :btree
   end
 
   create_table "user_sets", force: :cascade do |t|
