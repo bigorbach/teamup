@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user_sets do
-  #   resources :teams
+    resources :memebers
   # end
   #
   # resources :teams do
