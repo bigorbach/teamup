@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   resources :user_sets do
+    resources :members
   #   resources :teams
   # end
   #
   # resources :teams do
   #   resources :members
-  # end
+    end
   end
 
   devise_for :users
