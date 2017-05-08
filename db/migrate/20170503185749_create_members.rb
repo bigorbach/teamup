@@ -5,8 +5,8 @@ class CreateMembers < ActiveRecord::Migration[5.0]
       t.string :skill_strength
 
       t.belongs_to :user
-      t.belongs_to :set
-      t.belongs_to :team
+      t.belongs_to :user_set
+      # t.belongs_to :team
 
       t.timestamps
 

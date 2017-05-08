@@ -1,12 +1,18 @@
 class MembersController < ApplicationController
+
+  def new
+    @user_set = UserSet.find(params[:user_set_id])
+    @member = Member.new
+  end
+
   def create
-    @user_set = User_set.find(params[:user_set_id])
+    @user_set = UserSet.find(params[:user_set_id])
     @member = Member.new(member_params)
-    @member.user_set = @user_set
+    @member.user_set_id = @user_set
     @member.user = current_user
 
     if @member.save
-      flash[:success] = 'Member added to Team'
+      flash[:success] = 'Member added to Set'
       redirect_to user_set_path(@user_set)
     else
       flash[:errors] = @member.errors.full_messages.join(', ')
