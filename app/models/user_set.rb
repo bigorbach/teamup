@@ -4,7 +4,7 @@ class UserSet < ApplicationRecord
     [true, "Balanced"]
   ]
 
-  validates :topic, uniqueness: true
+  validates :topic, presence: true
   validates :skill, presence: true
   validates :team_size, presence: true
   validates :team_size, numericality: true
