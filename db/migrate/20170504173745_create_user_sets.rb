@@ -5,7 +5,7 @@ class CreateUserSets < ActiveRecord::Migration[5.0]
       t.string :topic, null: false
       t.integer :team_size, null: false
       t.boolean :balance, default: false
-      t.string :skill, default: false
+      t.string :skill, null: false
 
       t.timestamps
 
