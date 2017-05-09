@@ -1,26 +1,28 @@
-<div class= "row">
-  <h1> Create a Set of Teams </h1>
+<div class= "rows">
+  <div class="columns small-6 small-offset-3">
+    <h2> Create Team Set</h2>
 
-  <%= form_for(@user_set) do |f| %>
-    <div class="field">
-      <%= f.label :topic %>
-      <%= f.text_field :topic %>
-    </div>
-    <div class="field">
-      <%= f.label :skill %>
-      <%= f.text_field :skill %>
-    </div>
-    <div class="field">
-      <%= f.label :team_size, "Team Size"%>
-      <%= f.text_area :team_size%>
-    </div>
-    <div class="field">
-      <%= f.label :balance, "Fully Randomized or Balanced by Skill Strength"%>
-      <%= f.collection_radio_buttons :balance, @balance, :first, :last %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Create Set of Teams", class: "button"%>
-    </div>
-  <% end %>
-  <p><%= link_to "Back", user_sets_path %></p>
+    <%= form_for(@user_set) do |f| %>
+      <div class="field">
+        <%= f.label :topic %>
+        <%= f.text_field :topic %>
+      </div>
+      <div class="field">
+        <%= f.label :skill %>
+        <%= f.text_field :skill %>
+      </div>
+      <div class="field">
+        <%= f.label :team_size, "Team Size"%>
+        <%= f.text_area :team_size%>
+      </div>
+      <div class="field">
+        <%= f.label :balance, "Fully Randomized or Balanced by Skill Strength"%>
+        <%= f.collection_radio_buttons :balance, @balance, :first, :last %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Create Set of Teams", class: "button"%>
+      </div>
+    <% end %>
+    <p><%= link_to "Back", user_sets_path %></p>
+  </div>
 </div>

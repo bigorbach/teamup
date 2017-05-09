@@ -1,8 +1,8 @@
 <div class="row text-center">
   <h2>Join <%= @user_set.topic %></h2>
 </div>
-<div class="row">
-<% binding.pry %>
+<div class="rows">
+    <div class="columns small-6 small-offset-3">
 
     <%= form_for [@user_set, @member] do |f| %>
       <div class="field">
@@ -11,8 +11,9 @@
       </div>
       <div class="actions">
         <%= f.submit "Join Set of Teams", class: "button"%>
-    <% end %>
-  </div>
+        <% end %>
+      </div>
+</div>
 
 
   <p><%= link_to "Back", user_set_path(@user_set) %></p>
