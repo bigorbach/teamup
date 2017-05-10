@@ -10,6 +10,14 @@
 <div class="row text-center">
   <h5><%= link_to 'Join this Set', new_user_set_member_path(@user_set)  %></h5>
 </div>
+<%= binding.pry %>
+<% @members.each do |member| %>
+  <div class="row">
+    <div class="row text-center">
+      <h6><%=  member.name %></h6>
+    </div>
+  </div>
+<% end %>
 
 <div class="small-6 large-centered columns">
   <h5><%= link_to 'Update this Set', edit_user_set_path  %></h5>
