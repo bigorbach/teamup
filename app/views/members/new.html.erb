@@ -6,15 +6,22 @@
 
     <%= form_for [@user_set, @member] do |f| %>
       <div class="field">
-      <%= f.label :skill_strength %>
-      <%= f.text_field :skill_strength %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :skill_strength %>
+        <%= f.text_field :skill_strength %>
       </div>
       <div class="actions">
         <%= f.submit "Join Set of Teams", class: "button"%>
+        <% binding.pry %>
         <% end %>
       </div>
-</div>
+    </div>
+  </div>
 
-
-  <p><%= link_to "Back", user_set_path(@user_set) %></p>
+  <div>
+  <%= link_to "Back", user_set_path(@user_set) %>
+  </div>
 </div>

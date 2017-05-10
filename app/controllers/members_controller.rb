@@ -2,13 +2,13 @@ class MembersController < ApplicationController
 
   def new
     @user_set = UserSet.find(params[:user_set_id])
-    @member = Member.new
+    @member = Member.new 
   end
 
   def create
     @user_set = UserSet.find(params[:user_set_id])
     @member = Member.new(member_params)
-    @member.user_set_id = @user_set
+    @member.user_set = @user_set
     @member.user = current_user
 
     if @member.save
@@ -46,6 +46,6 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:skill_strength)
+    params.require(:member).permit(:name, :skill_strength)
   end
 end
