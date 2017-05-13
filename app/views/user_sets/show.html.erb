@@ -10,16 +10,49 @@
 <div class="row text-center">
   <h5><%= link_to 'Join this Set', new_user_set_member_path(@user_set)  %></h5>
 </div>
-<%= binding.pry %>
+
+<% if @teamed == false %>
+<div class="row text-center">
+  <h4>Members</h4>
+</div>
 <% @members.each do |member| %>
   <div class="row">
     <div class="row text-center">
-      <h6><%=  member.name %></h6>
+      <h6><%= link_to member.name, user_set_member_path(member) %></h6>
     </div>
   </div>
 <% end %>
+  <div class="row">
+    <div class="row text-center">
+  <h5> <%= link_to 'Make Teams', edit_user_set_path %> </h5>
+    </div>
+  </div>
+<% else %>
+<div class="row text-center">
+  <h4>Teams</h4>
+</div>
+  <% @teams.each_with_index do |team, index| %>
+  <div class="row">
+    <div class="row text-center">
+    <h5>Team <%= index + 1 %></h5>
+    <% team.each do |member| %>
+        <div class="row">
+            <div class="row text-center">
+              <h6><%= link_to member.name, user_set_member_path(member) %></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+  <!-- <div class="row">
+    <div class="row text-center">
+  <h5> <%= link_to 'Make Teams', edit_user_set_path %> </h5>
+    </div>
+  </div> -->
+<% end %>
 
-<div class="small-6 large-centered columns">
+
   <h5><%= link_to 'Update this Set', edit_user_set_path  %></h5>
   <h5><%= link_to 'Delete Set', @user_set, method: :delete, data: {confirm: "Are you sure?"} %></h5>
 </div>

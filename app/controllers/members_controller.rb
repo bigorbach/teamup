@@ -2,7 +2,7 @@ class MembersController < ApplicationController
 
   def new
     @user_set = UserSet.find(params[:user_set_id])
-    @member = Member.new 
+    @member = Member.new
   end
 
   def create
@@ -43,6 +43,10 @@ class MembersController < ApplicationController
     Member.find(params[:id]).destroy
     flash[:success] = "Member deleted successfully"
     redirect_to user_set_path(@user_set)
+  end
+
+  def show
+    @member = Member.find(params[:id])
   end
 
   def member_params

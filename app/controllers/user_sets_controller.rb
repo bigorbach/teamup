@@ -34,13 +34,15 @@ class UserSetsController < ApplicationController
   def show
     @user_set = UserSet.find(params[:id])
     @members = @user_set.members
-    # @team = Team.new
-    # @teams = @user_set.teams
-
+    @team_size = @user_set.team_size
+    @teamed = false
+    @balance = @user_set.balance
+    @team = true
+    balance?
   end
 
   def destroy
-    @set = user_set.find(params[:id])
+    @user_set = UserSet.find(params[:id])
     @user_set.destroy
     flash[:success] = "User Set deleted successfully"
     redirect_to user_sets_path
@@ -48,6 +50,9 @@ class UserSetsController < ApplicationController
 
   def edit
     @user_set = UserSet.find(params[:id])
+    @members = @user_set.members
+    @team_size = @user_set.team_size
+    balance?
   end
 
   def update
@@ -64,7 +69,33 @@ class UserSetsController < ApplicationController
 
   private
 
+  def balance?
+    if @balance = false
+      randomize_teams
+    else
+      balance_teams
+    end
+  end
+  :balance?
+
+  def randomize_teams
+    randomized_members = @members.shuffle
+    randomized_teams = randomized_members.in_groups_of(@team_size)
+    @teams = randomized_teams
+    @teamed = true
+    # redirect_to user_set_path(@user_set)
+  end
+
+  def balance_teams
+    sorted_members = @members.sort{ |a, b| a.skill_strength <=> b.skill_strength }
+    balanced_teams = sorted_members.in_groups_of(@team_size, false)
+    @teams = balanced_teams
+    @teamed = true
+    # redirect_to user_set_path(@user_set)
+  end
+
   def user_set_params
     params.require(:user_set).permit(:topic, :team_size, :balance, :skill)
   end
+
 end

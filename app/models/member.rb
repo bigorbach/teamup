@@ -1,5 +1,5 @@
 class Member < ApplicationRecord
-  validates :skill_strength, numericality: true
+  validates :skill_strength, presence: true, numericality: true
   validates :name, presence: true
 
   # belongs_to :team

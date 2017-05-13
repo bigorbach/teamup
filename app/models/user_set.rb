@@ -1,4 +1,5 @@
 class UserSet < ApplicationRecord
+
   BALANCE =[
     [false, "Randomized"],
     [true, "Balanced"]
