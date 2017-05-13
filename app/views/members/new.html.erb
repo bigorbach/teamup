@@ -4,7 +4,7 @@
 <div class="rows">
     <div class="columns small-6 small-offset-3">
 
-    <%= form_for [@user_set, @member] do |f| %>
+      <%= form_for [@user_set, @member] do |f| %>
       <div class="field">
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -15,7 +15,6 @@
       </div>
       <div class="actions">
         <%= f.submit "Join Set of Teams", class: "button"%>
-        <% binding.pry %>
         <% end %>
       </div>
     </div>
