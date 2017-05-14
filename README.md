@@ -15,4 +15,5 @@ TeamUP is a Rails app that creates sets of users and seperates these users into 
 * Visit (http://localhost:3000/)
 
 * To see the official website visit (http://bigteamup.herokuapp.com/)
+
 * ...
